@@ -1,12 +1,12 @@
 ---
-id: jsonapi
-title: JSON API
-sidebar_label: JSON API
+id: http
+title: HTTP Request
+sidebar_label: HTTP Request
 ---
 
 ## What
 
-JSON API is a simple segment to return any json data from any (anonymous) API.
+HTTP Request is a simple segment to return any json data from any (anonymous) HTTP call.
 
 ## Sample Configuration
 
@@ -14,7 +14,7 @@ import Config from "@site/src/components/Config.js";
 
 <Config
   data={{
-    type: "jsonapi",
+    type: "http",
     style: "diamond",
     foreground: "#ffffff",
     background: "#c386f1",
@@ -22,16 +22,18 @@ import Config from "@site/src/components/Config.js";
     trailing_diamond: "\uE0B0",
     template: "{{ .Result }}",
     properties: {
-      api_url: "https://jsonplaceholder.typicode.com/posts/1",
+      url: "https://jsonplaceholder.typicode.com/posts/1",
+      method: "GET",
     },
   }}
 />
 
 ## Properties
 
-| Name      |   Type   |                    Default                     | Description                      |
-| --------- | :------: | :--------------------------------------------: | -------------------------------- |
-| `api_url` | `string` | `https://jsonplaceholder.typicode.com/posts/1` | The JSON API URL you want to use |
+| Name     |   Type   |                    Default                     | Description                   |
+| -------- | :------: | :--------------------------------------------: | ----------------------------- |
+| `url`    | `string` | `https://jsonplaceholder.typicode.com/posts/1` | The HTTP URL you want to call |
+| `method` | `string` |                     `GET`                      | The HTTP method to use        |
 
 ## Template ([info][templates])
 

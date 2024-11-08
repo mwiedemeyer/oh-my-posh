@@ -328,8 +328,8 @@
             "go",
             "haskell",
             "helm",
+            "http",
             "ipify",
-            "jsonapi",
             "julia",
             "java",
             "kotlin",
@@ -3741,21 +3741,27 @@
           "if": {
             "properties": {
               "type": {
-                "const": "jsonapi"
+                "const": "http"
               }
             }
           },
           "then": {
             "title": "Display your any JSON property from any API",
-            "description": "https://ohmyposh.dev/docs/segments/web/jsonapi",
+            "description": "https://ohmyposh.dev/docs/segments/web/http",
             "properties": {
               "properties": {
                 "properties": {
-                  "api_url": {
+                  "url": {
                     "type": "string",
-                    "title": "API URL",
-                    "description": "The JSON API URL",
+                    "title": "URL",
+                    "description": "The HTTP URL",
                     "default": "https://jsonplaceholder.typicode.com/posts/1"
+                  },
+                  "method": {
+                    "type": "string",
+                    "title": "HTTP method",
+                    "description": "The HTTP method",
+                    "default": "GET"
                   }
                 }
               }
